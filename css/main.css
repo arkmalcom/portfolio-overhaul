@@ -6,20 +6,20 @@
 @keyframes dropIn {
     0% {
         opacity: 0;
-        transform: translateY(-100vw);
+        transform: scale(1.75);
     }
 
-    30%, 50% {
-        transform: translateY(0);
+    25%, 45% {
+        transform: scale(1.05) translateY(1rem) skew(0deg, -5deg);
     }
 
-    50%, 51% {
-        transform: translateY(-1rem);
+    75%, 90% {
+        opacity: 1;
+        transform: skew(0deg, 5deg);
     }
 
     100% {
-        opacity: 1;
-        transform: translateY(0);
+        transform: scale(1) translateY(0) skew(0deg, 0deg);
     }
 }
 
@@ -40,6 +40,7 @@ html, body {
 }
 
 .fancy-font {
+    display: inline-block;
     font-family: 'Lobster', cursive;
 }
 
@@ -71,7 +72,7 @@ html, body {
     color: var(--text-color);
 }
 
-.layer-container .greeting {
+.layer-container .motto {
     text-align: center;
     width: 100vw;
     font-weight: 100;
@@ -92,6 +93,5 @@ html, body {
 }
 
 .drop-text {
-    animation: dropIn 5s ease forwards;
-    animation-delay: calc(var(--order) * 200ms);
+    animation: 3s ease 0s normal forwards 1 dropIn;
 }

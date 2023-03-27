@@ -1,10 +1,22 @@
 const topSide = document.getElementById("top-side");
+let animationComplete = false;
 
-const handleOnMove = e => {
+const handleOnMove = (e, animationComplete) => {
+    if (!animationComplete) {
+        return;
+    }
+    
     const pos = e.clientX / window.innerWidth * 100;
 
     topSide.style.width = `${pos}%`;
 }
 
-document.onmousemove = e => handleOnMove(e);
-document.ontouchmove = e => handleOnMove(e.touches[0]);
+addEventListener("load", async (e) => { 
+    await new Promise(r => setTimeout(r, 5000));
+    animationComplete = true;
+})
+
+
+document.onmousemove = e => handleOnMove(e, animationComplete);
+document.ontouchmove = e => handleOnMove(e.touches[0], animationComplete);
+
