@@ -3,7 +3,7 @@
 
 
 /* Animations */
-@keyframes dropIn {
+@keyframes motto-animation {
     0% {
         opacity: 0;
         transform: scale(1.75);
@@ -21,6 +21,32 @@
     100% {
         transform: scale(1) translateY(0) skew(0deg, 0deg);
     }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(500px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes grow {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.15);
+    }
+}
+
+.motto-animation {
+    animation: 3s ease 0s normal forwards 1 motto-animation;
 }
 
 /* Main styles */
@@ -72,7 +98,7 @@ html, body {
     color: var(--text-color);
 }
 
-.layer-container .motto {
+.motto {
     text-align: center;
     width: 100vw;
     font-weight: 100;
@@ -88,10 +114,31 @@ html, body {
     background-color: var(--primary-contrast);
 }
 
-.more-info {
+.lang-cards {
+    height: 100%;
+
+    z-index: 3;
     position: relative;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
 }
 
-.drop-text {
-    animation: 3s ease 0s normal forwards 1 dropIn;
+.lang-cards img {
+    margin-bottom: 5rem;
+    margin-left: 5rem;
+    border-radius: 10px;
+    width: 175px;
+    height: 87px;
+    opacity: 0;
+
+    animation: 1s ease-out forwards fade-in;
+    animation-delay: calc(3s +(var(--order) * 200ms));
 }
+
+.lang-cards a:hover {
+    animation: 500ms ease forwards grow;
+}
+
