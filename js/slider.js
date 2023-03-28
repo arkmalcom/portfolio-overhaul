@@ -12,7 +12,7 @@ const handleOnMove = (e, animationComplete) => {
 }
 
 addEventListener("load", async (e) => { 
-    await new Promise(r => setTimeout(r, 5000));
+    await new Promise(r => setTimeout(r, 3000));
     animationComplete = true;
 })
 

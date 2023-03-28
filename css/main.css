@@ -46,7 +46,7 @@
 }
 
 .motto-animation {
-    animation: 3s ease 0s normal forwards 1 motto-animation;
+    animation: 2s ease 0s normal forwards 1 motto-animation;
 }
 
 /* Main styles */
@@ -54,8 +54,9 @@
     --primary-color: #EF233C;
     --secondary-color: #D90429;
     --text-color: #EDF2F4;
-    --primary-contrast: #2B2D42;
-    --secondary-contrast: #8D99AE;
+    --primary-contrast: #023047;
+    --secondary-contrast: #219ebc;
+    --accent: #e9c46a;
 }
 
 html, body {
@@ -110,8 +111,16 @@ html, body {
     z-index: 2;
 }
 
+#top-side .fancy-font {
+    color: var(--text-color);
+}
+
 #bottom-side {
-    background-color: var(--primary-contrast);
+    background-color: var(--secondary-contrast);
+}
+
+#bottom-side .fancy-font {
+    color: var(--accent);
 }
 
 .lang-cards {
@@ -130,15 +139,17 @@ html, body {
     margin-bottom: 5rem;
     margin-left: 5rem;
     border-radius: 10px;
-    width: 175px;
-    height: 87px;
+    width: 125px;
+    height: 66px;
     opacity: 0;
 
-    animation: 1s ease-out forwards fade-in;
-    animation-delay: calc(3s +(var(--order) * 200ms));
+    animation: 500ms ease-out forwards fade-in;
+    animation-delay: calc(3s +(var(--order) * 100ms));
+
+    box-shadow: 1px 1px 15px 3px black;
 }
 
 .lang-cards a:hover {
-    animation: 500ms ease forwards grow;
+    animation: 250ms ease forwards grow;
 }
 
