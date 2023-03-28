@@ -41,7 +41,7 @@
     }
 
     to {
-        transform: scale(1.15);
+        transform: scale(1.05);
     }
 }
 
@@ -131,25 +131,37 @@ html, body {
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: flex-end;
 }
 
 .lang-cards img {
-    margin-bottom: 5rem;
-    margin-left: 5rem;
+    margin-bottom: 4rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
     border-radius: 10px;
     width: 125px;
     height: 66px;
     opacity: 0;
 
-    animation: 500ms ease-out forwards fade-in;
+    animation: 500ms ease forwards fade-in;
     animation-delay: calc(3s +(var(--order) * 100ms));
 
-    box-shadow: 1px 1px 15px 3px black;
+    box-shadow: 1px 1px 8px 2px var(--primary-contrast);
 }
 
 .lang-cards a:hover {
     animation: 250ms ease forwards grow;
 }
 
+/* Media specific nonsense */
+@media screen and (max-width: 480px) {
+    .lang-cards img {
+        height: 40px;
+        width: 75px;
+    }
+
+    .layer-container {
+        font-size: 1.5rem;
+    }
+}
